@@ -18,7 +18,7 @@ class HomeScreen extends Component {
     }
 }
 
-export default HomeScreen;
+export { HomeScreen };
 
 const stylesAppBar = StyleSheet.create({
 bottom: {
