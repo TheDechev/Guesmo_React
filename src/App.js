@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { HomeScreen, LoginScreen } from './screens';
+import { HomeScreen, LoginScreen, ProfileScreen, GroupScreen, PostScreen } from './screens';
 
 class App extends Component {
   render() {
@@ -17,6 +17,15 @@ const AppStackNavigator = createStackNavigator({
   },
   Home:{
     screen: LoginScreen
+  },
+  Profile:{
+    screen: ProfileScreen
+  },
+  Group:{
+    screen: GroupScreen
+  },
+  Post:{
+    screen: PostScreen
   },
 });
 

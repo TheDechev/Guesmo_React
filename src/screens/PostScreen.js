@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Text } from 'react-native';
 
-class LoginScreen extends Component {
+class PostScreen extends Component {
     render() {
       return (
-        <Text>-LoginScreen-</Text>
+        <Text>-PostScreen-</Text>
       )
     }
 }
 
-export { LoginScreen };
+export { PostScreen };
