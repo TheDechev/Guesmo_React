@@ -2,8 +2,22 @@
 import React, {Component} from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { HomeScreen, LoginScreen, ProfileScreen, GroupScreen, PostScreen } from './screens';
-
 class App extends Component {
+
+  // componentWillMount(){
+  //   var config = {
+  //       apiKey: "AIzaSyCLapg10XLGbVCY3gTac_KuiTsGJXZFmqQ",
+  //       authDomain: "guesmo-435c0.firebaseapp.com",
+  //       databaseURL: "https://guesmo-435c0.firebaseio.com",
+  //       projectId: "guesmo-435c0",
+  //       storageBucket: "guesmo-435c0.appspot.com",
+  //       messagingSenderId: "549027192085"
+  //   };
+
+  //   firebase.initializeApp(config);
+  //   console.log("initiialized firebase configuration");
+  // }
+
   render() {
     return (
       <Apps/>
@@ -13,10 +27,10 @@ class App extends Component {
 
 const AppStackNavigator = createStackNavigator({
   Login: {
-    screen: HomeScreen
+    screen: LoginScreen
   },
   Home:{
-    screen: LoginScreen
+    screen: HomeScreen
   },
   Profile:{
     screen: ProfileScreen
