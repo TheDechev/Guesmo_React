@@ -2,25 +2,13 @@
 import React, {Component} from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { HomeScreen, LoginScreen, ProfileScreen, GroupScreen, PostScreen } from './screens';
+import firebase from 'firebase';
+
 class App extends Component {
-
-  // componentWillMount(){
-  //   var config = {
-  //       apiKey: "AIzaSyCLapg10XLGbVCY3gTac_KuiTsGJXZFmqQ",
-  //       authDomain: "guesmo-435c0.firebaseapp.com",
-  //       databaseURL: "https://guesmo-435c0.firebaseio.com",
-  //       projectId: "guesmo-435c0",
-  //       storageBucket: "guesmo-435c0.appspot.com",
-  //       messagingSenderId: "549027192085"
-  //   };
-
-  //   firebase.initializeApp(config);
-  //   console.log("initiialized firebase configuration");
-  // }
 
   render() {
     return (
-      <Apps/>
+      <ScreensNavigation/>
     );
   }
 }
@@ -43,6 +31,6 @@ const AppStackNavigator = createStackNavigator({
   },
 });
 
-const Apps = createAppContainer(AppStackNavigator)
+const ScreensNavigation = createAppContainer(AppStackNavigator)
 
 export default App;
