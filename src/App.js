@@ -1,34 +1,24 @@
-
 import React, {Component} from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { HomeScreen, LoginScreen, ProfileScreen, GroupScreen, PostScreen } from './screens';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { StatusBar } from 'react-native';
+import { MainScreen } from './MainScreen';
+
+StatusBar.setBarStyle('light-content', true);
 
 class App extends Component {
   render() {
     return (
-      <Apps/>
+      <Container />
     );
   }
 }
 
 const AppStackNavigator = createStackNavigator({
-  Login: {
-    screen: HomeScreen
-  },
-  Home:{
-    screen: LoginScreen
-  },
-  Profile:{
-    screen: ProfileScreen
-  },
-  Group:{
-    screen: GroupScreen
-  },
-  Post:{
-    screen: PostScreen
-  },
-});
+  Main: {
+    screen: MainScreen
+  }
+})
 
-const Apps = createAppContainer(AppStackNavigator)
-
+const Container = createAppContainer(AppStackNavigator)
 export default App;
