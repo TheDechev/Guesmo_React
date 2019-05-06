@@ -1,24 +1,15 @@
 import React, {Component} from 'react';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { StatusBar } from 'react-native';
-import { MainScreen } from './MainScreen';
-
-StatusBar.setBarStyle('light-content', true);
+import { createAppContainer } from 'react-navigation';
+import { AppSwitchNavigator } from './AppNavigators';
 
 class App extends Component {
   render() {
     return (
-      <Container />
+      <AppContainer />
     );
   }
 }
 
-const AppStackNavigator = createStackNavigator({
-  Main: {
-    screen: MainScreen
-  }
-})
+const AppContainer = createAppContainer(AppSwitchNavigator);
 
-const Container = createAppContainer(AppStackNavigator)
 export default App;
