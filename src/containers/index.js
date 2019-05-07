@@ -1,5 +1,5 @@
 export * from './HomeContainer';
-export * from './LoginScreen';
+export * from './LoginContainer';
 export * from './GroupContainer';
 export * from './ProfileContainer';
 export * from './NotificationsContainer';

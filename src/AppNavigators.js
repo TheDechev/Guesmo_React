@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { NotificationsContainer, HomeContainer, LoginScreen, ProfileContainer, GroupContainer, PostScreen } from './containers';
+import { NotificationsContainer, HomeContainer, LoginContainer, ProfileContainer, GroupContainer, PostScreen } from './containers';
 import { createBottomTabNavigator, createDrawerNavigator, createSwitchNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
 import { WelcomeScreen } from './WelcomeScreen';
 
@@ -31,7 +31,7 @@ const AppBottomTabNavigator = createBottomTabNavigator({
     },
   },
   More:{
-    screen: HomeContainer,
+    screen: LoginContainer,
     navigationOptions: {
       tabBarIcon:  ({ tintColor }) => (
           <Icon name="ios-more" size={22} />
