@@ -1,116 +1,68 @@
 /*This is th Example of google Sign in*/
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, {Component} from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
 import { GoogleButton, FacebookButton } from './../components';
-import firebase from 'firebase';
+import { withNavigation } from 'react-navigation';
+import * as logManager from './../LogManager';
+import { Headline, Button } from 'react-native-paper';
 
-class LoginScreen extends Component {
 
-  state = { loggedGoogle: false, loggedFacebook: false  };
+class LoginScreenA extends Component {
 
-  getCredentials(){
-    try{
-      AsyncStorage.getItem('facebookCredentials').then(
-        (token) => {
-          if (token){
-            console.log("got facebook cred", token);
-
-            this.props.navigation.replace("Dashboard");
-          }
-        });
-        console.log("no facebook cred");
-
-        AsyncStorage.getItem('googleCredentials').then(
-          (token) => {
-            if (token){
-            console.log("got google cred", token);
-
-              this.props.navigation.replace("Dashboard");
-            }
-        });
-        console.log("no google cred");
-    }
-    catch (error){
-      console.log("asyncstorage error: ", error);
-    }
-  }
-
-  componentDidMount(){
-    console.log("component mounted");
-
-    this.getCredentials();
+  componentDidMount() {
+    logManager.handleLogin(this.props.navigation);
   }
 
   componentWillMount(){
-    var firebaseConfig = {
-        apiKey: "AIzaSyCLapg10XLGbVCY3gTac_KuiTsGJXZFmqQ",
-        authDomain: "guesmo-435c0.firebaseapp.com",
-        databaseURL: "https://guesmo-435c0.firebaseio.com",
-        projectId: "guesmo-435c0",
-        storageBucket: "guesmo-435c0.appspot.com",
-        messagingSenderId: "549027192085"
-    };
-
-    if (!firebase.apps.length){
-      firebase.initializeApp(firebaseConfig);
-      console.log("initiialized firebase configuration");
-    }
-    else{
-      firebase.app();
-    }
-
-    // firebase.auth().onAuthStateChanged((user) => {
-    //   if (user){
-    //     console.log("user is logged in");
-    //     this.props.navigation.navigate('Dashboard')
-    //   }
-    //   else{
-    //     console.log("user is NOT logged in");
-    //   }
-    // });
+    logManager.firebaseInit();
   }
 
   render() {
     return (
-      <View style={styles.container}>
-      <Text>Guesmo</Text>
-        <GoogleButton
-          loginCB={() =>
-            {
-              this.setState({loggedGoogle: true })
-              this.props.navigation.replace("Dashboard")
-            }}
-          logoutCB={() => {
-              this.logoutGoogle()
-              this.props.navigation.navigate("Login")
-          }}
-        />
-        <FacebookButton
-          loginCB={() =>
-            {
-              this.setState({loggedFacebook: true })
-              this.props.navigation.replace("Dashboard")
-            }
-          }
-          logoutCB={() =>
-            {
-              this.setState({loggedFacebook: false })
-              this.props.navigation.navigate("Login")
-            }
-        }
-        />
+      <View style = {styles.parentViewStyle}>
+        <Button
+          style = {styles.buttonStyle}
+          onPress = {() => logManager.basicLogin(this.props.navigation)}>
+            Fake Login
+        </Button>
+
+        <Headline style={styles.headlineStyle}>
+          Guesmo
+        </Headline>
+
+        <View style={styles.loginButtonsStyle}>
+            <GoogleButton
+              loginCB={() => logManager.basicLogin(this.props.navigation)}
+              logoutCB={() => logManager.logoutGoogle(this.props.navigation)}
+            />
+            <FacebookButton
+              loginCB={() => logManager.basicLogin(this.props.navigation)}
+              logoutCB={() => logManager.logoutFacebook(this.props.navigation)}
+            />
+        </View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 150,
+  parentViewStyle:{
+    height: 400
+  },
+  buttonStyle:{
+    flex: 1,
+    alignSelf: 'flex-end',
+    right: 0
+  },
+  headlineStyle: {
+    marginTop: 50,
+    paddingLeft: 155,
+  },
+  loginButtonsStyle: {
     alignItems: 'center',
+    marginTop: 150,
     flexDirection: 'column',
-    justifyContent: 'center',
   },
 });
 
+const LoginScreen = withNavigation(LoginScreenA);
 export { LoginScreen };

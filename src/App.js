@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
 import { createAppContainer } from 'react-navigation';
-import { AppSwitchNavigator } from './AppNavigators';
+import { MainStackNavigator } from './AppNavigators';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 export default class App extends Component {
 
   render() {
     return (
-      <AppContainer />
+      <PaperProvider>
+          <MainApp />
+      </PaperProvider>
     );
   }
 }
 
-const AppContainer = createAppContainer(AppSwitchNavigator);
+const MainApp = createAppContainer(MainStackNavigator);

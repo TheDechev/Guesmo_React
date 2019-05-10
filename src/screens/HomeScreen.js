@@ -1,38 +1,26 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text } from 'react-native';
-import { Provider as PaperProvider } from 'react-native-paper';
-import { Button } from 'react-native-paper';
-
+import { StyleSheet, ScrollView } from 'react-native';
+import { BasicCard } from './../components'
 class HomeScreen extends Component {
 
     render() {
       return (
-        <PaperProvider>
-          <Button onPress={() =>
-            {
-              this.handleLogout();
-            }
-          }>
-            Logout
-          </Button>
-        </PaperProvider>
+        <ScrollView>
+          <BasicCard
+            cardTitle = "Card_1"
+            cardSubtitle = "Subtitle_1"
+            cardIcon = "gamepad"
+            cardImageURL = "https://picsum.photos/700"
+          />
+          <BasicCard
+            cardTitle = "Card_2"
+            cardSubtitle = "Subtitle_2"
+            cardIcon = "headset"
+            cardImageURL = "https://picsum.photos/701"
+          />
+        </ScrollView>
       )
     }
 }
 
 export { HomeScreen };
-
-const stylesAppBar = StyleSheet.create({
-  bottom: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  textStyle: {
-    fontWeight:'bold',
-    textAlign:'center',
-    fontSize:20,
-    marginBottom:10
-  }
-});

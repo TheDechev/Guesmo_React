@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, SafeAreaView, DrawerItems, Button} from 'react-native';
+import { View, SafeAreaView, Button} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { NotificationsContainer, LoginContainer, GroupContainer } from './containers';
-import { createBottomTabNavigator, createDrawerNavigator, createSwitchNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
+import { createBottomTabNavigator, createDrawerNavigator, createStackNavigator } from 'react-navigation';
 import { LoginScreen, HomeScreen } from './screens';
 import * as logManager from './LogManager';
 
@@ -82,21 +82,20 @@ const AppDrawerNavigator = createDrawerNavigator(
     contentComponent:(props) => (
         <View style={{flex:1}}>
             <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
-                <Button title="Logout" onPress={() => logManager.handleLogout(props)}/>
+                <Button title="Logout" onPress={() => logManager.handleLogout(props.navigation)}/>
+                <Button title="Fake Logout" onPress={() => logManager.basicLogout(props.navigation)}/>
             </SafeAreaView>
         </View>
     ),
-    // drawerOpenRoute: 'DrawerOpen',
-    // drawerCloseRoute: 'DrawerClose',
-    // drawerToggleRoute: 'DrawerToggle'
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle'
   }
 )
 
-const AppSwitchNavigator = createStackNavigator({
+const MainStackNavigator = createStackNavigator({
   login: { screen: LoginScreen },
-  // Home: {screen: HomeScreen },
-  // welcome: { screen: WelcomeScreen },
   Dashboard: { screen: AppDrawerNavigator }
 })
 
-export { AppSwitchNavigator };
+export { MainStackNavigator };
