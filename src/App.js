@@ -1,36 +1,14 @@
-
 import React, {Component} from 'react';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { HomeScreen, LoginScreen, ProfileScreen, GroupScreen, PostScreen } from './screens';
-import firebase from 'firebase';
+import { createAppContainer } from 'react-navigation';
+import { AppSwitchNavigator } from './AppNavigators';
 
-class App extends Component {
+export default class App extends Component {
 
   render() {
     return (
-      <ScreensNavigation/>
+      <AppContainer />
     );
   }
 }
 
-const AppStackNavigator = createStackNavigator({
-  Login: {
-    screen: LoginScreen
-  },
-  Home:{
-    screen: HomeScreen
-  },
-  Profile:{
-    screen: ProfileScreen
-  },
-  Group:{
-    screen: GroupScreen
-  },
-  Post:{
-    screen: PostScreen
-  },
-});
-
-const ScreensNavigation = createAppContainer(AppStackNavigator)
-
-export default App;
+const AppContainer = createAppContainer(AppSwitchNavigator);

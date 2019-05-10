@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Text } from 'react-native';
 
-class GroupScreen extends Component {
+class GroupContainer extends Component {
     render() {
       return (
-        <Text>-GroupScreen-</Text>
+        <Text>-GroupContainer-</Text>
       )
     }
 }
 
-export { GroupScreen };
+export { GroupContainer };

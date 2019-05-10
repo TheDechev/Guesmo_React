@@ -16,7 +16,7 @@ class LoginScreen extends Component {
           if (token){
             console.log("got facebook cred", token);
 
-            this.props.navigation.replace("Home");
+            this.props.navigation.replace("Dashboard");
           }
         });
         console.log("no facebook cred");
@@ -26,7 +26,7 @@ class LoginScreen extends Component {
             if (token){
             console.log("got google cred", token);
 
-              this.props.navigation.replace("Home");
+              this.props.navigation.replace("Dashboard");
             }
         });
         console.log("no google cred");
@@ -63,7 +63,7 @@ class LoginScreen extends Component {
     // firebase.auth().onAuthStateChanged((user) => {
     //   if (user){
     //     console.log("user is logged in");
-    //     this.props.navigation.navigate('Home')
+    //     this.props.navigation.navigate('Dashboard')
     //   }
     //   else{
     //     console.log("user is NOT logged in");
@@ -79,24 +79,24 @@ class LoginScreen extends Component {
           loginCB={() =>
             {
               this.setState({loggedGoogle: true })
-              this.props.navigation.replace("Home")
+              this.props.navigation.replace("Dashboard")
             }}
           logoutCB={() => {
               this.logoutGoogle()
-              this.props.navigation.navigate('Login')
+              this.props.navigation.navigate("Login")
           }}
         />
         <FacebookButton
           loginCB={() =>
             {
               this.setState({loggedFacebook: true })
-              this.props.navigation.replace("Home")
+              this.props.navigation.replace("Dashboard")
             }
           }
           logoutCB={() =>
             {
               this.setState({loggedFacebook: false })
-              this.props.navigation.navigate('Login')
+              this.props.navigation.navigate("Login")
             }
         }
         />

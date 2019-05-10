@@ -54,7 +54,6 @@ class FacebookButton extends Component {
 				} else { // Successfully logged in
 					AccessToken.getCurrentAccessToken().then(
 					(data) => {
-						// console.log(data.accessToken.toString());
 						const credentials = firebase.auth.FacebookAuthProvider.credential(data.accessToken.toString());
 						this.handleLogin(credentials);
 					}
