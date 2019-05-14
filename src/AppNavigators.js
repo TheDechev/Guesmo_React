@@ -89,13 +89,16 @@ const AppDrawerNavigator = createDrawerNavigator(
     ),
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle'
+    drawerToggleRoute: 'DrawerToggle',
   }
 )
 
 const MainStackNavigator = createStackNavigator({
   login: { screen: LoginScreen },
   Dashboard: { screen: AppDrawerNavigator }
+},
+{
+  headerMode: 'none',
 })
 
 export { MainStackNavigator };
