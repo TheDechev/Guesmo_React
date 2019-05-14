@@ -62,6 +62,8 @@
 		8B95B29058FA43048A0E36B5 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D319DBC114E437A9E2DBE4A /* libRNGoogleSignin.a */; };
 		0551F58AAD2A4F969F6B38F2 /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D9562CD13E4E59910308EA /* libRCTFBSDK.a */; };
 		C2C0830D889F449F873858A3 /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF86BFC87144C5589D43AA4 /* libRNCAsyncStorage.a */; };
+		78579412208E41C78792B13F /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDB0422F0CEA48F7A7593E23 /* Pacifico-Regular.ttf */; };
+		726EADDDA832459D8E698F51 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6826F47ED26340F6AA2E9A7E /* PermanentMarker-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -398,6 +400,8 @@
 		36D9562CD13E4E59910308EA /* libRCTFBSDK.a */ = {isa = PBXFileReference; name = "libRCTFBSDK.a"; path = "libRCTFBSDK.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		5B26BDD3E3404B46B7BD494C /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; name = "RNCAsyncStorage.xcodeproj"; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		8AF86BFC87144C5589D43AA4 /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; name = "libRNCAsyncStorage.a"; path = "libRNCAsyncStorage.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		CDB0422F0CEA48F7A7593E23 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; name = "Pacifico-Regular.ttf"; path = "../assets/fonts/Pacifico-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6826F47ED26340F6AA2E9A7E /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; name = "PermanentMarker-Regular.ttf"; path = "../assets/fonts/PermanentMarker-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -695,6 +699,8 @@
 				651E6AA8EAE0425CABA05C79 /* Octicons.ttf */,
 				9C954171CD7D462AB38A6FEC /* SimpleLineIcons.ttf */,
 				1C17B7FFCB2F4D1699CB07D5 /* Zocial.ttf */,
+				CDB0422F0CEA48F7A7593E23 /* Pacifico-Regular.ttf */,
+				6826F47ED26340F6AA2E9A7E /* PermanentMarker-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1161,6 +1167,8 @@
 				28EFED7948184C8394A1873C /* Octicons.ttf in Resources */,
 				8099E4B8477B4BCFB91099C3 /* SimpleLineIcons.ttf in Resources */,
 				3318CC8AF2724672B20AEDB3 /* Zocial.ttf in Resources */,
+				78579412208E41C78792B13F /* Pacifico-Regular.ttf in Resources */,
+				726EADDDA832459D8E698F51 /* PermanentMarker-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

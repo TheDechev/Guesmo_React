@@ -5,7 +5,7 @@ import { NotificationsContainer, LoginContainer, GroupContainer } from './contai
 import { createBottomTabNavigator, createDrawerNavigator, createStackNavigator } from 'react-navigation';
 import { LoginScreen, HomeScreen } from './screens';
 import * as logManager from './LogManager';
-
+import { Fonts } from './utils/Fonts';
 
 const AppBottomTabNavigator = createBottomTabNavigator({
   Home: {
@@ -57,16 +57,30 @@ const DashboardStackNavigator = createStackNavigator(
     DashboardTabNavigator: AppBottomTabNavigator
   },
   {
+    headerLayoutPreset: 'center',
     defaultNavigationOptions:({navigation})=>{
       return{
-        headerRight: <Icon name="md-menu" size={22}
-                      onPress={()=>navigation.openDrawer()}/>,
-        title:'Guesmo?',
-        headerLeft: <Icon name="ios-contact" size={22}
-                      onPress={()=>navigation.navigate('Groups')}/>,
-        headerStyle: {
-          backgroundColor: '#48d1cc',
-        }
+          headerRight:( 
+            <View style={{ paddingRight: 10 }}>
+              <Icon name="md-menu" size={22} onPress={()=>navigation.openDrawer()}/>
+            </View>
+          ),
+          title:'Guesmo?',
+          headerLeft:  ( 
+              <View style={{ paddingLeft: 10 }}>
+                <Icon name="ios-contact" size={22} onPress={()=>navigation.navigate('Groups')} />
+              </View>
+          ),
+          headerStyle: { alignContent:'center' , backgroundColor: '#48d1cc' },
+          headerTitleStyle:{ 
+            textShadowColor: 'rgba(0, 0, 0, 0.75)',
+            textShadowOffset: {width: -1, height: 1},
+            textShadowRadius: 10,
+            fontFamily: 'monospace',
+            color: 'white', 
+            fontWeight: 'bold', 
+            fontSize: 25, 
+            alignSelf: 'center' },
       }
     }
   }
